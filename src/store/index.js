@@ -1,14 +1,9 @@
-import configureComponentStore from './configureComponentStore';
-import configureAppStore from './configureAppStore';
-import { rootAppReducer, rootComponentReducer } from '../redux';
+import configureStore from './configureStore';
+import rootReducer  from '../redux';
 import rootSaga from '../sagas/';
 
-export const createComponentStore = () => {
-  return configureComponentStore(rootComponentReducer);
+const createStore = () => {
+  return configureStore(rootReducer, rootSaga);
 };
 
-export const createAppStore = () => {
-  return configureAppStore(rootAppReducer, rootSaga);
-};
-
-export default createAppStore;
+export default createStore;

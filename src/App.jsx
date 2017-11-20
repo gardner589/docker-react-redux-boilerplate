@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
-import { createComponentStore, createAppStore } from './store';
+import createStore from './store';
 
 
 /*** Containers */
@@ -11,22 +11,21 @@ import { createComponentStore, createAppStore } from './store';
 import { AlertsContainer } from './modules/alerts/containers';
 
 
-/*** Stores */
+/*** Events */
 
-const componentStore = window.componentStore = createComponentStore();
-const appStore = createAppStore();
+import emitter from './services/eventEmitter';
+window.eventEmitter = emitter;
 
 
 /*** Components */
 
-import NotificationComponent from './components/notification/NotificationComponent';
+import components from './components';
+window.components = components;
 
 
-/*** Component Registry */
+/*** Store */
 
-const componentRegistry = {
-  NotificationComponent,
-};
+const store = createStore();
 
 
 /*** Initialize standalone components via DOM */
@@ -36,13 +35,11 @@ $(() => {
   $.each(reactComponents, (index, el) => {
     const $el = $(el);
     const props = $el.data();
-    const Component = componentRegistry[props.reactComponent];
+    const Component = components[props.reactComponent];
 
     if (Component) {
       ReactDOM.render(
-        <Provider store={componentStore}>
-          <Component {...props} />
-        </Provider>,
+        <Component {...props} />,
         el
       )
     }
@@ -53,7 +50,7 @@ $(() => {
 /*** Initialize React Containers */
 
 ReactDOM.render(
-  <Provider store={appStore}>
+  <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={AlertsContainer} />
     </Router>
