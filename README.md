@@ -4,10 +4,8 @@
 
 ```
 /components  -- shared re-usable components
-    /notification
-        /redux
-            index.js  -- types, actions, and reducer for this component
-        NotificationComponent.jsx  -- a general re-usable react component
+    Notification.jsx  -- a shared non-functionality specific component
+    index.js  -- a registry of all the shared components
 /modules  -- where functionality specific directories live
     /alerts  --  (a specific functionality)
         /components  -- re-usable components specific to this functionality
@@ -24,29 +22,27 @@
             getAlerts.js  -- a saga that will get alerts
             index.js  -- a registry of all the sagas in this directory
             tests.js
-/redux  -- where root reducers are composed
-    rootAppReducer.js  -- combines all reducers for for the app
-    rootComponentReducer.js  -- combines all reducers for components
-    index.js  -- registry of root reducers
-/sagas  -- where root saga is composed
-    index.js  -- import all module specific sagas, and create a root saga
+/redux
+    index.js  -- combines all reducers into a rootReducer
+/sagas
+    index.js  -- combines all sagas into a rootSaga
 /store
-    configureAppStore.js  -- handles creation of the main app store
-    configureComponentStore.js  -- handles creation of components store
-    index.js  -- exposes methods to create all stores, and send in necessary root reducers, and root middleware (like sagas)
+    configureStore.js  -- handles creation of the main app store
+    index.js  -- exposes createStore method, and send in necessary root reducers, and root middleware (like sagas)
 /services  -- for all things that can be treated as services
     api.js  -- where api config, and routes are created and exposed
-App.jsx  -- where react modules + standalone components are initialized, and tied together with their redux stores
+    eventEmitter.js  -- creates an event emitter to bridge communication between this, and the legacy app
+App.jsx  -- where react containers + standalone components are initialized
 ```
 
 ## The problem
 How should we communicate from our legacy architecture (i.e, jQuery) w/ general react components?
 
 ## The proposal
-* Each component has it's own redux (i.e, `/src/components/notification/redux`
-* We have a one specific store for components (configured here: `/src/store/configureComponentStore.js`, initialized in `/src/App.jsx`)
-* We expose the store globally `/src/App.jsx L#16`
-* We can then call `componentStore.dispatch([reduxAction](actionArgs))` from jQuery whenever we want to communicate w/ a component  (we would also have to globally expose these component redux actions for use)
+* we use an event emitter (`/src/services/eventEmitter.js`), which is globally exposed `/src/App.jsx L#17`
+* components have their own events, formatted like: 'COMPONENT/EVENT' (i.e, `/src/components/Notification.jsx L#7`)
+* we globally expose all shared components (`/src/App.jsx L#22`)
+* we can then do something like `eventEmitter.emit(components.Notification.EVENTS.TOGGLE, true)`
 
 ---
 
@@ -59,7 +55,7 @@ We can use sagas (https://github.com/redux-saga/redux-saga)
 Info on sagas in this proposal:
 * Each module has their own sagas (i.e, `/src/modules/alerts/sagas/getAlerts.js`)
 * We create a root saga by combining, and initializing all sagas in `/src/sagas/index.js`
-* We connect sagas to redux when configuring the main app store via middleware `/src/store/configureAppStore.js`
+* We connect sagas to redux when configuring the main app store via middleware `/src/store/configureStore.js`
 
 
 
