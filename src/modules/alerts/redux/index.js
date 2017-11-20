@@ -16,8 +16,8 @@ const { Types, Creators } = createActions({
   prefix: 'ALERTS/'
 });
 
-export const AlertsTypes = Types;
-export const AlertsActions = Creators;
+export const types = Types;
+export const actions = Creators;
 
 
 /*** Initial State */

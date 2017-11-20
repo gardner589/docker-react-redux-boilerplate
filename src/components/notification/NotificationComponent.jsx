@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 /*** Redux Actions */
 
-import {NotificationComponentActions} from './redux';
+import { actions } from './redux';
 
 
 class NotificationComponent extends React.Component {
@@ -30,8 +30,8 @@ const mapStateToProps = ({notificationComponent}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    show: () => dispatch(NotificationComponentActions.show()),
-    hide: () => dispatch(NotificationComponentActions.hide()),
+    show: () => dispatch(actions.show()),
+    hide: () => dispatch(actions.hide()),
   }
 };
 

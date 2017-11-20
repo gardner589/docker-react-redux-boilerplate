@@ -5,7 +5,7 @@ import selectors from '../redux/selectors';
 
 /*** Redux Actions */
 
-import {AlertsActions} from '../redux';
+import { actions as alertsActions } from '../redux';
 
 
 class AlertsContainer extends React.Component {
@@ -62,11 +62,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAlerts: (data) => dispatch(AlertsActions.getAlertsRequest(data)),
-    selectAlert: (id) => dispatch(AlertsActions.selectAlert(id)),
-    deselectAlert: (id) => dispatch(AlertsActions.deselectAlert(id)),
-    selectAllAlerts: () => dispatch(AlertsActions.selectAllAlerts()),
-    deselectAllAlerts: () => dispatch(AlertsActions.deselectAllAlerts()),
+    fetchAlerts: (data) => dispatch(alertsActions.getAlertsRequest(data)),
+    selectAlert: (id) => dispatch(alertsActions.selectAlert(id)),
+    deselectAlert: (id) => dispatch(alertsActions.deselectAlert(id)),
+    selectAllAlerts: () => dispatch(alertsActions.selectAllAlerts()),
+    deselectAllAlerts: () => dispatch(alertsActions.deselectAllAlerts()),
   }
 };
 

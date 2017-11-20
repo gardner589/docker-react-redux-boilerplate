@@ -10,8 +10,8 @@ const { Types, Creators } = createActions({
   prefix: 'NOTIFICATION/'
 });
 
-export const NotificationComponentTypes = Types;
-export const NotificationComponentActions = Creators;
+export const types = Types;
+export const actions = Creators;
 
 
 /*** Initial State */

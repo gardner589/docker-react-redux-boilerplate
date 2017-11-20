@@ -1,6 +1,6 @@
 import { delay } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
-import { AlertsActions } from '../redux';
+import { actions } from '../redux';
 
 export default function * getAlerts (api, action) {
 
@@ -8,7 +8,7 @@ export default function * getAlerts (api, action) {
 
   /*** mock api request for now */
   const response = yield call(delay, 1000);
-  yield put(AlertsActions.getAlertsSuccess([{
+  yield put(actions.getAlertsSuccess([{
       id: 1,
       title: 'Alert 1',
     }, {
@@ -21,9 +21,9 @@ export default function * getAlerts (api, action) {
   // const { data } = action;
   // const response = yield call(api.getAlerts, data);
   // if (response.ok) {
-  //   yield put(AlertsActions.getAlertsSuccess(response.data));
+  //   yield put(actions.getAlertsSuccess(response.data));
   // } else {
-  //   yield put(AlertsActions.getAlertsFailure());
+  //   yield put(actions.getAlertsFailure());
   // }
 
 }
