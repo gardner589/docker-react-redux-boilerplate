@@ -227,7 +227,7 @@ module.exports = {
     'space-in-parens': ['error', 'never'],         // Require or disallow spaces inside parentheses
     'space-infix-ops': 'error',                    // Require spaces around operators
     'space-unary-ops': ['error', {'words': true, 'nonwords': false, 'overrides': {}}],  // Require or disallow spaces before/after unary operators http://eslint.org/docs/rules/space-unary-ops
-    'spaced-comment': ['warn', 'always', {'exceptions': ['-', '+', '**'], 'markers': ['=', '!']}],           // space here to support sprockets directives}],  // Or /* in a comment
+    'spaced-comment': ['warn', 'always', {'exceptions': ['-', '+'], 'markers': ['=', '!', '*', '**']}],           // space here to support sprockets directives}],  // Or /* in a comment
     'template-tag-spacing': ['warn', 'never'],     // Require or disallow spacing between template tags and their literals. http://eslint.org/docs/rules/template-tag-spacing
     'unicode-bom': ['error', 'never'],             // Require or disallow the Unicode Byte Order Mark http://eslint.org/docs/rules/unicode-bom
     'wrap-regex': 'off',                           // Require regex literals to be wrapped in parentheses
