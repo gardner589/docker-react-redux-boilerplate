@@ -215,7 +215,7 @@ module.exports = {
     'operator-assignment': ['error', 'always'],    // Require assignment operator shorthand where possible or prohibit it entirely http://eslint.org/docs/rules/operator-assignment
     'operator-linebreak': 'off',                   // Enforce operators to be placed before or after line breaks
     'padded-blocks': ['warn', 'never'],           // Enforce padding within blocks
-    'quote-props': ['warn', 'always', {'keywords': false, 'unnecessary': true, 'numbers': false}],  // Require quotes around object literal property names http://eslint.org/docs/rules/quote-props.html
+    'quote-props': ['warn', 'as-needed', {'keywords': true, 'unnecessary': false, 'numbers': true}],  // Require quotes around object literal property names http://eslint.org/docs/rules/quote-props.html
     'quotes': ['warn', 'single', {'avoidEscape': true}],  // Specify whether double or single quotes should be used
     'require-jsdoc': 'off',                        // Do not require jsdoc http://eslint.org/docs/rules/require-jsdoc
     'semi': ['error', 'always'],                   // Require or disallow use of semicolons instead of ASI
@@ -227,7 +227,7 @@ module.exports = {
     'space-in-parens': ['error', 'never'],         // Require or disallow spaces inside parentheses
     'space-infix-ops': 'error',                    // Require spaces around operators
     'space-unary-ops': ['error', {'words': true, 'nonwords': false, 'overrides': {}}],  // Require or disallow spaces before/after unary operators http://eslint.org/docs/rules/space-unary-ops
-    'spaced-comment': ['warn', 'always', {'exceptions': ['-', '+'], 'markers': ['=', '!']}],           // space here to support sprockets directives}],  // Or /* in a comment
+    'spaced-comment': ['warn', 'always', {'exceptions': ['-', '+', '**'], 'markers': ['=', '!']}],           // space here to support sprockets directives}],  // Or /* in a comment
     'template-tag-spacing': ['warn', 'never'],     // Require or disallow spacing between template tags and their literals. http://eslint.org/docs/rules/template-tag-spacing
     'unicode-bom': ['error', 'never'],             // Require or disallow the Unicode Byte Order Mark http://eslint.org/docs/rules/unicode-bom
     'wrap-regex': 'off',                           // Require regex literals to be wrapped in parentheses
