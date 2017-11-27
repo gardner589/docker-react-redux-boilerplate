@@ -22,9 +22,7 @@ const create = (baseURL = 'http://localhost:8088/') => {
   return {
     getAlerts,
   };
-
 };
-
 
 export default {
   create,

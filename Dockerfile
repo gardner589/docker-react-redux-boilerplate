@@ -1,9 +1,9 @@
 ## BUILDING
 ##   (from project root directory)
-##   $ docker build -t angelmmiguel-docker-react-store-boilerplate .
+##   $ docker build -t angelmmiguel-docker-react-redux-boilerplate .
 ##
 ## RUNNING
-##   $ docker run -p 3000:3000 angelmmiguel-docker-react-store-boilerplate
+##   $ docker run -p 3000:3000 angelmmiguel-docker-react-redux-boilerplate
 ##
 ## CONNECTING
 ##   Lookup the IP of your active docker host using:

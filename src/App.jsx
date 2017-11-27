@@ -1,25 +1,21 @@
 import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, browserHistory } from 'react-router';
-import { Provider } from 'react-redux';
+import {Router, Route, browserHistory} from 'react-router';
+import {Provider} from 'react-redux';
 import createStore from './store';
+import emitter from './services/eventEmitter';
+import components from './components';
 
 
 /*** Containers */
 
-import { AlertsContainer } from './modules/alerts/containers';
+import {AlertsContainer} from './modules/alerts/containers';
 
 
-/*** Events */
+/*** Expose Events, and Components */
 
-import emitter from './services/eventEmitter';
 window.eventEmitter = emitter;
-
-
-/*** Components */
-
-import components from './components';
 window.components = components;
 
 
@@ -41,7 +37,7 @@ $(() => {
       ReactDOM.render(
         <Component {...props} />,
         el
-      )
+      );
     }
   });
 });

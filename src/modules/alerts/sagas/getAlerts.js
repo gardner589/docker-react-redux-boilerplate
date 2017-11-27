@@ -1,22 +1,12 @@
-import { delay } from 'redux-saga';
-import { call, put } from 'redux-saga/effects';
-import { actions } from '../redux';
+import {delay} from 'redux-saga';
+import {call, put} from 'redux-saga/effects';
+import {actions} from '../redux';
 
-export default function * getAlerts (api, action) {
-
+export default function* getAlerts (api, action) {
   console.log(api, action);
-
   /*** mock api request for now */
-  const response = yield call(delay, 1000);
-  yield put(actions.getAlertsSuccess([{
-      id: 1,
-      title: 'Alert 1',
-    }, {
-      id: 2,
-      title: 'Alert 2',
-    }])
-  );
-
+  yield call(delay, 1000);
+  yield put(actions.getAlertsSuccess([{id: 1, title: 'Alert 1'}, {id: 2, title: 'Alert 2'}]));
   // Would really look more like:
   // const { data } = action;
   // const response = yield call(api.getAlerts, data);
@@ -25,5 +15,4 @@ export default function * getAlerts (api, action) {
   // } else {
   //   yield put(actions.getAlertsFailure());
   // }
-
 }

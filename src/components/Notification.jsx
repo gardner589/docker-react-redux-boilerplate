@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import emitter from '../services/eventEmitter';
 
 
@@ -6,6 +7,10 @@ export default class Notification extends React.Component {
 
   static EVENTS = {
     TOGGLE: 'NOTIFICATION/TOGGLE',
+  };
+
+  static propTypes = {
+    isVisible: PropTypes.boolean,
   };
 
   constructor (props) {

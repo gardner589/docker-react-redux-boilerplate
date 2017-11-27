@@ -1,6 +1,6 @@
 /*** This is an index of all sagas from each module */
 
-import { all } from 'redux-saga/effects';
+import {all} from 'redux-saga/effects';
 import API from '../services/api';
 
 
@@ -16,10 +16,8 @@ const api = API.create();
 
 /** Stitch together sagas */
 
-export default function * rootSaga () {
-
+export default function* rootSaga () {
   yield all([
     ...alertsSaga(api),
   ]);
-
 }
