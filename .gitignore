@@ -7,6 +7,7 @@ npm-debug*
 /dist/static/
 /dist/index.html
 .DS_Store
+.idea/
 
 # Remove this line if you want to update the yarn.lock
 yarn.lock
