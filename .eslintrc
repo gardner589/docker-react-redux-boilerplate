@@ -1,0 +1,34 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "globals": {
+    "__DEBUG__": true,
+    "__DEV__": true,
+    "__SERVER__": true,
+    "jsroutes": true
+  },
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "extends": "./eslint-config-main.js",
+  "plugins": ["import", "react"],
+  "settings": {
+    "import/extensions": [".js", ".jsx"],
+    "import/resolver": {
+      "webpack": {
+        "extensions": [".js", ".jsx", ".json"],
+        "config": "webpack.config.js"
+      }
+    },
+    "import/core-modules": [],
+    "import/ignore": [
+      "node_modules",
+      "\\.(coffee|scss|css|less|hbs|svg|json)$"
+    ]
+  }
+}
