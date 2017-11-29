@@ -5,7 +5,7 @@
     "build": "webpack --config ./webpack-prod.config.js --progress --profile --colors --optimize-minimize --optimize-dedupe && cp -R src/static/ dist/static",
     "start": "npm run build && node server.js",
     "dev": "webpack-dev-server --inline --progress --colors --host=0.0.0.0 --port 8088",
-    "test": "echo \"No unit tests and e2e tests yet\" && exit 1"
+    "test": "jest"
   },
   "license": "MIT",
   "dependencies": {
@@ -36,6 +36,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.16.1",
+    "jest": "^21.2.1",
     "node-sass": "^3.6.0",
     "react-rangeslider": "^1.0.2",
     "sass-loader": "^3.2.0",
