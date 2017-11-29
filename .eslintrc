@@ -12,11 +12,18 @@
     "__SERVER__": true,
     "jsroutes": true
   },
+  "parserOptions": {
+    "sourceType": "module"
+  },
   "ecmaFeatures": {
+    "classes": true,
     "jsx": true
   },
   "extends": "./eslint-config-main.js",
   "plugins": ["import", "react"],
+  "rules": {
+    "no-undef": [0]  // allows us to define static properties to classes (i.e, static propTypes = {})
+  },
   "settings": {
     "import/extensions": [".js", ".jsx"],
     "import/resolver": {

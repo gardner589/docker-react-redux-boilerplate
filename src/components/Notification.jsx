@@ -10,7 +10,7 @@ export default class Notification extends React.Component {
   };
 
   static propTypes = {
-    isVisible: PropTypes.boolean,
+    isVisible: PropTypes.bool,
   };
 
   constructor (props) {

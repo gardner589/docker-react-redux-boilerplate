@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {allAlerts, filterAlerts} from '../redux/selectors';
 import ThreatStatusFilter from '../../../components/ThreatStatusFilter';
 
-/*** Redux Actions */
+/* Redux Actions */
 
 import {actions as alertsActions} from '../redux';
 
@@ -19,8 +19,8 @@ class AlertsContainer extends React.Component {
     deselectAllAlerts: PropTypes.func,
     alerts: PropTypes.arrayOf(PropTypes.object),
     selectedAlerts: PropTypes.arrayOf(PropTypes.object),
-    alertsFetching: PropTypes.boolean,
-    alertsError: PropTypes.boolean,
+    alertsFetching: PropTypes.bool,
+    alertsError: PropTypes.bool,
   };
 
   componentWillMount () {

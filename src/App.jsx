@@ -8,23 +8,23 @@ import emitter from './services/eventEmitter';
 import components from './components';
 
 
-/*** Containers */
+/* Containers */
 
-import {AlertsContainer} from './modules/alerts/containers';
+import alertsContainers from './modules/alerts/containers';
 
 
-/*** Expose Events, and Components */
+/* Expose Events, and Components */
 
 window.eventEmitter = emitter;
 window.components = components;
 
 
-/*** Store */
+/* Store */
 
 const store = createStore();
 
 
-/*** Initialize standalone components via DOM */
+/* Initialize standalone components via DOM */
 
 $(() => {
   const reactComponents = $('[data-react-component]');
@@ -43,12 +43,12 @@ $(() => {
 });
 
 
-/*** Initialize React Containers */
+/* Initialize React Containers */
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={AlertsContainer} />
+      <Route path="/" component={alertsContainers.AlertsContainer} />
     </Router>
   </Provider>,
   document.getElementById('content')

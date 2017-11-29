@@ -1,4 +1,4 @@
-/*** Registry of all general components */
+/* Registry of all general components */
 
 import Notification from './Notification';
 

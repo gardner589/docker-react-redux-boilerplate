@@ -227,7 +227,7 @@ module.exports = {
     'space-in-parens': ['error', 'never'],         // Require or disallow spaces inside parentheses
     'space-infix-ops': 'error',                    // Require spaces around operators
     'space-unary-ops': ['error', {'words': true, 'nonwords': false, 'overrides': {}}],  // Require or disallow spaces before/after unary operators http://eslint.org/docs/rules/space-unary-ops
-    'spaced-comment': ['warn', 'always', {'exceptions': ['-', '+'], 'markers': ['=', '!', '*', '**']}],           // space here to support sprockets directives}],  // Or /* in a comment
+    'spaced-comment': ['warn', 'always', {'exceptions': ['-', '+'], 'markers': ['=', '!']}],           // space here to support sprockets directives}],  // Or /* in a comment
     'template-tag-spacing': ['warn', 'never'],     // Require or disallow spacing between template tags and their literals. http://eslint.org/docs/rules/template-tag-spacing
     'unicode-bom': ['error', 'never'],             // Require or disallow the Unicode Byte Order Mark http://eslint.org/docs/rules/unicode-bom
     'wrap-regex': 'off',                           // Require regex literals to be wrapped in parentheses
@@ -355,7 +355,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'error',           // Prevent missing React when using JSX https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
     'react/require-extension': ['off', {'extensions': ['.jsx', '.js']}],  // Restrict file extensions that may be required https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-extension.md deprecated in favor of import/extensions
     'react/require-render-return': 'error',        // Require render() methods to return something https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md
-    'react/self-closing-comp': 'error',            // Prevent extra closing tags for components without children https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
+    'react/self-closing-comp': ['error', {'component': true, 'html': false}],            // Prevent extra closing tags for components without children https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
     'react/jsx-space-before-closing': ['error', 'always'],  // Enforce spaces before the closing bracket of self-closing JSX elements https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-space-before-closing.md
     'react/sort-comp': ['error', {'order': ['static-methods', 'lifecycle', '/^on.+$/', '/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/', 'everything-else', '/^render.+$/', 'render']}],  // Enforce component methods order https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
     'react/jsx-wrap-multilines': ['error', {'declaration': true, 'assignment': true, 'return': true}], // Prevent missing parentheses around multilines JSX https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md
