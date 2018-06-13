@@ -83,7 +83,7 @@ This application uses `webpack` to build assets and serve them in development mo
 
 ### Development
 
-Use the following command to run a development server and open your browser in [http://localhost:8080](http://localhost:8080).
+Use the following command to run a development server and open your browser in [http://localhost:8088](http://localhost:8088).
 
 ```bash
 docker-compose up dev
