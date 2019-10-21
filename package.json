@@ -12,7 +12,7 @@
     "apisauce": "^1.1.1",
     "eventemitter3": "^2.0.3",
     "express": "^4.13.4",
-    "jquery": "^2.2.4",
+    "jquery": "^3.4.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
