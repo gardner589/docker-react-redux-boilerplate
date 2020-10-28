@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "apisauce": "^1.1.1",
+    "apisauce": "^2.0.0",
     "eventemitter3": "^4.0.0",
     "express": "^4.13.4",
     "jquery": "^3.4.1",
